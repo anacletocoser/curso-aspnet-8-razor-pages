@@ -5,8 +5,11 @@ namespace AulaRazorPages.Pages
 {
     public class IndexModel : PageModel
     {
+
+        public string? Title { get; set; }
         public void OnGet()// método chamado quando a razorPage recebe uma requisição
         {
+            Title = "My First APP from IndexModel";
         }
     }
 }

@@ -1,11 +1,15 @@
 // O builder é o contrutor da aplicação, você pode configurar todos os serviços que você irá utilizar
+using AulaRazorPages.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
 //Essa instrução levanta todos os serviços, instancias e classes pra funcionar o Razor Pages
 builder.Services.AddRazorPages();
 
-
+builder.Services.AddDbContext<MoviesContext>(option =>
+    option.UseInMemoryDatabase("MyFirstAppDB"));
 
 
 var app = builder.Build();
