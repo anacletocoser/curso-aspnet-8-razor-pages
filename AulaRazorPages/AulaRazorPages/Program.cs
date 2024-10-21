@@ -25,6 +25,7 @@ var app = builder.Build();
 
 //Antes do build configura-se os serviços, e aqui é para o aplicativo funcionar:
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 app.UseRouting();
 app.MapRazorPages();
 
