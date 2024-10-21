@@ -9,7 +9,7 @@
 <body>
     <main class="container">
         @* <partial name="_Nav" /> *@
-        @await Html.PartialAsync("_Nav")
+        @await Html.PartialAsync("_Nav") @* Esta é uma outra forma de chamar a Partial View, utilizando um método assíncrono C#*@
         @RenderBody()
         <partial name="_Footer" />
     </main>
