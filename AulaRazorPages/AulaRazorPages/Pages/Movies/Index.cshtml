@@ -1,17 +1,21 @@
-﻿@page "/movies"
+﻿@page "/my-movies2"
 @model AulaRazorPages.Pages.Movies.IndexModel
 @{
     ViewData["Title"] = "My Movies";
-}
 
-<h1>My Movies</h1>
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+<h1>@ViewData["Title"]</h1>
 
 <ul class="list-group">
     @foreach (var movie in Model.Movies)
     {
         <li class="list-group-item">
-            <a href="/movie/@movie.Permalink">@movie.Name</a>
+            @* BOAS PRÁTICAS: Ao invés de usar o href direto, você pode utilizar a tagHelper do .net para navegar, desta forma a navegação não vai mais depender do nome da rota, e sim da localização do arquivo. *@
+            @* <a href="/movie/@movie.Permalink">@movie.Name</a> *@
+            <a asp-page="/Movies/Details" asp-route-permalink="@movie.Permalink">@movie.Name</a>
         </li>
-
     }
 </ul>

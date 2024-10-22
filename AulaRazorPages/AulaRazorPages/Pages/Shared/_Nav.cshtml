@@ -1,13 +1,18 @@
 ﻿<header class="d-flex justify-content-center py-3">
     <ul class="nav nav-pills">
+        
+        @* BOAS PRÁTICAS: Ao invés de usar o href direto, você pode utilizar a tagHelper do .net para navegar, desta forma a navegação não vai mais depender do nome da rota, e sim da localização do arquivo. *@
         <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
+            @* <a class="nav-link" href="/">Home</a> *@
+            <a class="nav-link" asp-page="/Index">Home</a>
         </li>
         <li>
-            <a class="nav-link" href="/movies">Movies</a>
+            @* <a class="nav-link" href="/movies">Movies</a> *@
+            <a class="nav-link" asp-page="/Movies/Index">Movies</a>
         </li>
         <li>
-            <a class="nav-link" href="/contact">Contact</a>
+            @* <a class="nav-link" href="/contact">Contact</a> *@
+            <a class="nav-link" asp-page="/Contact/Contact">Contact</a>
         </li>
     </ul>
 </header>

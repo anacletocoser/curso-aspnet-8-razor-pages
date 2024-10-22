@@ -14,7 +14,8 @@ builder.Services.AddDbContext<MoviesContext>(option =>
 
 var app = builder.Build();
 
-
+app.UseStatusCodePagesWithReExecute("/errors/{0}"); //Recomendável utilizar este método
+//app.UseStatusCodePagesWithRedirects("/errors/{0}"); //Não é recomendável utilizar, por questões de indexação nos buscadores, como google e bing
 
 //app.MapGet("/", () => "Hello World!"); // significa que nesta rota "/" ele chama este método.
 //A linha anterior contém uma lambda expression, isso significa um método, como se fosse o seguinte:

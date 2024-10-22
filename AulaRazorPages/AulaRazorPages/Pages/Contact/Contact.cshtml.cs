@@ -9,14 +9,16 @@ namespace AulaRazorPages.Pages.Contact
     {
         // Utilizando este BindProperty, não precisa passar o ContactFormModel como paarâmetro [FromForm] no método post
         [BindProperty]
-        public ContactFormModel? ContactForm { get; set; } 
+        public ContactFormModel? ContactForm { get; set; }
+
+        [ViewData]
+        public string MessageSuccess { get; set; }
         public void OnGet()
         {
             ContactForm = new ContactFormModel();
         }
 
-        public IActionResult OnPost(
-             ) 
+        public IActionResult OnPost() 
         {
             if (!ModelState.IsValid)
             {
@@ -28,6 +30,7 @@ namespace AulaRazorPages.Pages.Contact
             // send email
             // save on database
             // do something else
+            MessageSuccess = "Contact Saved!";
 
             return Page();
         }
